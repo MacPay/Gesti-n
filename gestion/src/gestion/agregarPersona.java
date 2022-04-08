@@ -271,7 +271,7 @@ public class agregarPersona extends javax.swing.JFrame {
             int numero = Integer.parseInt(txtciadd.getText());
             String insert = "insert into persona (ci, nombre, apellido,fecha_nac, fecha_ing,edad) values (?,?,?,?,?,?)";
             DateTimeFormatter fecha_ingreso = DateTimeFormatter.ofPattern("yy/MM/dd HH:mm:ss");
-            int a = (jdt1.getCalendar().get(Calendar.MONTH) + 1;
+            int a = (jdt1.getCalendar().get(Calendar.MONTH) + 1);
             String dia = Integer.toString(jdt1.getCalendar().get(Calendar.DATE));
             String mes = Integer.toString(jdt1.getCalendar().get(Calendar.MONTH));
             String año = Integer.toString(jdt1.getCalendar().get(Calendar.YEAR));
