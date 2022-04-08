@@ -314,7 +314,7 @@ public class agregarPersona extends javax.swing.JFrame {
             }else {
                 JOptionPane.showMessageDialog(null, "Debe llenar los campos vacios");
             }
-
+//coemntario adicional
         
     }//GEN-LAST:event_btnagregarActionPerformed
 
