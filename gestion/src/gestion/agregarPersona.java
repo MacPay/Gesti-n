@@ -51,7 +51,8 @@ public class agregarPersona extends javax.swing.JFrame {
         TextPrompt textape1 = new TextPrompt("Apellido", txtapellidoadd);
         TextPrompt textape2 = new TextPrompt("Segundo Apeliido", txtapellido2add);
         TextPrompt textcel = new TextPrompt("Ej: 099876543", txtceladd);
-        TextPrompt textdir = new TextPrompt("Ej: 099876543", txtdiradd);
+        TextPrompt textdir = new TextPrompt("Luis menoni Nº345", txtdiradd);
+        TextPrompt textmail = new TextPrompt("ejemplo@ejemplo.com", txtmailadd);
     }
 
     
@@ -79,7 +80,7 @@ public class agregarPersona extends javax.swing.JFrame {
         btnagregar = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        txtmailadd = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         txtceladd = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
@@ -146,22 +147,17 @@ public class agregarPersona extends javax.swing.JFrame {
         jdt1.setMinSelectableDate(new java.util.Date(-62135755128000L));
 
         jPanel2.setBackground(new java.awt.Color(204, 0, 51));
+        jPanel2.setPreferredSize(new java.awt.Dimension(100, 100));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(94, Short.MAX_VALUE)
-                .addComponent(lblfoto)
-                .addContainerGap())
+            .addComponent(lblfoto, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(94, Short.MAX_VALUE)
-                .addComponent(lblfoto)
-                .addContainerGap())
+            .addComponent(lblfoto, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -208,7 +204,7 @@ public class agregarPersona extends javax.swing.JFrame {
                                     .addComponent(jLabel9))))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField1)
+                            .addComponent(txtmailadd)
                             .addComponent(txtdiradd)
                             .addComponent(txtnom2add, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtapellido2add)
@@ -258,7 +254,7 @@ public class agregarPersona extends javax.swing.JFrame {
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jLabel3)
                                     .addComponent(jLabel7)
-                                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(txtmailadd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(18, 18, 18)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jLabel8)
@@ -371,12 +367,16 @@ public class agregarPersona extends javax.swing.JFrame {
                 //                t.sendMessage(message, message.getRecipients(Message.RecipientType.TO));
                 //                t.close();
                 JOptionPane.showMessageDialog(null, "Se agrego correctamente.");
+                Log myLog = new Log("./log.txt");
+                myLog.addLine("Se agregó a: "+ txtnombreadd.getText()+ " "+ txtapellidoadd.getText() +" " + numero);
                 /*Abre la ventana anterior y cierra*/
                 mainmenu newFrame = new mainmenu();
                 newFrame.setVisible(true);
                 this.dispose();
             }catch (SQLException ex) {
                 JOptionPane.showMessageDialog(null,"Error: "+ex);
+            } catch (IOException ex) {
+                Logger.getLogger(agregarPersona.class.getName()).log(Level.SEVERE, null, ex);
             } /*catch (AddressException ex) {
                 Logger.getLogger(agregarPersona.class.getName()).log(Level.SEVERE, null, ex);
             } catch (MessagingException ex) {
@@ -397,9 +397,7 @@ public class agregarPersona extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void btnbuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnbuscarActionPerformed
-        // TODO add your handling code here:
-        JFrame jFrame = new JFrame();
-        jFrame.setSize(500,500);
+        // TODO add your handling code here:      
         JFileChooser elegir = new JFileChooser();
         elegir.setSize(500,500);
         
@@ -495,7 +493,6 @@ public class agregarPersona extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JTextField jTextField1;
     private com.toedter.calendar.JDateChooser jdt1;
     private javax.swing.JLabel lblciagregar;
     private javax.swing.JLabel lblfoto;
@@ -506,6 +503,7 @@ public class agregarPersona extends javax.swing.JFrame {
     private javax.swing.JTextField txtceladd;
     private javax.swing.JTextField txtciadd;
     private javax.swing.JTextField txtdiradd;
+    private javax.swing.JTextField txtmailadd;
     private javax.swing.JTextField txtnom2add;
     private javax.swing.JTextField txtnombreadd;
     // End of variables declaration//GEN-END:variables

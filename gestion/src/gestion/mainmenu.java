@@ -10,6 +10,8 @@ import java.sql.SQLException;
 import javax.swing.JTextField;
 import javax.swing.JTable;
 import java.lang.String;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import javax.swing.table.DefaultTableModel;
 
 
@@ -20,6 +22,8 @@ public final class mainmenu extends javax.swing.JFrame {
     
     private void mostrardatos() {
         DefaultTableModel modelo = new DefaultTableModel();
+        
+        
         modelo.addColumn("CI");
         modelo.addColumn("Nombre");
         modelo.addColumn("Apellido");
