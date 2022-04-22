@@ -23,7 +23,7 @@ public class Conexion {
                 //System.out.println("Conexion exitosa!");
             //}
         //}catch(ClassNotFoundException ex){
-            //System.out.println("Error al conectar: "+ex);
+           //System.out.println("Error al conectar: "+ex);
         } 
         catch (SQLException ex){
             System.out.println("Error al conectgar SQL: " +ex);
